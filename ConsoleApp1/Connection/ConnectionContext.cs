@@ -60,7 +60,7 @@ public class ConnectionContext:IDisposable
 
     public async Task SendMessageAsync(string message)
     {
-        if (SocketInstance != null || !SocketInstance.Connected)
+        if (SocketInstance == null || !SocketInstance.Connected)
         {
             throw new InvalidOperationException("Cannot send message to non-connected socket.");
         }

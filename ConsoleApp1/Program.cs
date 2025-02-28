@@ -7,6 +7,7 @@ class Program
 {
     static async Task Main(string[] args)
     {
+        Console.WriteLine("Switch Server Or Client:");
         var type = Console.ReadLine();
         if ("server".Equals(type))
         {
@@ -22,7 +23,7 @@ class Program
                 string? msg=Console.ReadLine();
                 if (msg == "quit")
                 {
-                    await client.Close();
+                    await client.CloseAsync();
                     break;
                 }
                 await  client.SendMessageAsync(msg);
